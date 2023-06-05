@@ -1,0 +1,7 @@
+/* filler css so I can see if the components are working */
+.footer {
+  display: flex;
+  background-color: grey;
+  width: 100vw;
+  justify-content: space-around;
+}

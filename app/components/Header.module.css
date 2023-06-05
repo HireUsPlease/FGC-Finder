@@ -1,0 +1,10 @@
+/* this is all just filler for TJ to have a starting point, half of this doesnt align or anything correctly */
+.header {
+  display: flex;
+  background-color: grey;
+  width: 100vw;
+}
+
+.pageTitle {
+  color: white;
+}
