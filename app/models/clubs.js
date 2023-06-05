@@ -22,16 +22,30 @@ const ClubSchema = new mongoose.Schema({
   logo: {
     type: String,
   },
-  location: {
+  location: { // GeoJSON data
     type: {
       type: String,
       enum: ['Point'], // 'location.type' must be 'Point'
-      required: true
     },
     coordinates: {
       type: [Number],
-      required: true
     }
+  },
+  city: {
+    type: String,
+    trim: true,
+  },
+  state: {
+    type: String,
+    trim: true,
+  },
+  address: {
+    type: String,
+    trim: true,
+  },
+  locationName: {
+    type: String,
+    trim: true,
   },
   website: {
     type: String,
@@ -40,6 +54,12 @@ const ClubSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Game'
   }],
+  contactEmail: {
+    type: String,
+    required: true,
+    match: /.+\@.+\..+/,
+    unique: true
+  },
   visible: {
     type: Boolean,
   },
@@ -49,7 +69,7 @@ const ClubSchema = new mongoose.Schema({
 });
 
 ClubSchema.virtual('slug').get(function() {
-  const urlSafeName = this.name.replace(' ', '_').replace(/[^\w\s]/gi, '');
+  const urlSafeName = this.name.toLowerCase().replace(' ', '_').replace(/[^\w\s]/gi, '');
   return `${urlSafeName}_${this._id}`;
 });
 
