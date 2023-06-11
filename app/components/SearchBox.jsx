@@ -8,7 +8,7 @@ const SearchBox = () => {
   const { ref } = usePlacesWidget({
     // Google API key goes here, I cannot get it to read from the enviorment variable right now
     // and it is a bad idea to just push your apikeys up, so it has to be put in manually for now
-    apiKey: "AIzaSyBtiiB2wi4xGoStP5LSQJyym0dMXkHYsY4",
+    apiKey: "Google Maps Api Key Goes here",
     onPlaceSelected: (place) => {
       console.log(place);
       if (place.geometry && place.geometry.location) {
