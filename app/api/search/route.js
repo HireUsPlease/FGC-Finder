@@ -43,7 +43,6 @@ export async function GET(request) {
       return false;
     }
 
-    console.log(games);
     if (games && games.length > 0) {
       const matchingGames = club.games.filter((game) => {
         return games.includes(game._id.toString())
