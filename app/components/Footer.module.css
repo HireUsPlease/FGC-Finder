@@ -1,7 +1,50 @@
-/* filler css so I can see if the components are working */
 .footer {
   display: flex;
-  background-color: grey;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7));
   width: 100vw;
-  justify-content: space-around;
+  justify-content: center;
+  align-items: center;
+  height: 4vh;
+  backdrop-filter: blur(5px);
+}
+
+.footer a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+  transition: color 0.3s ease;
+  font-size: 16px;
+}
+
+.footer a i {
+  margin-right: 5px;
+}
+
+.footer a:hover {
+  color: darkred;
+}
+
+@media (max-width: 767px) {
+
+  .footer a {
+    font-size: 10px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+
+  .footer a {
+    font-size: 15px;
+  }
+}
+
+@media (min-width: 1024px) {
+
+
+  .footer a {
+    font-size: 16px;
+  }
 }

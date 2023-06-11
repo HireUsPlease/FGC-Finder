@@ -1,10 +1,7 @@
-/* These are the global CSS variables, that apply to everything TJ */
+/* These are the global CSS variables, that apply to everything */
 :root {
   --max-width: 1100px;
-  /* --border-radius: 12px; */
-  --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
-    'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
-    'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
+  font-family: 'Roboto', sans-serif;
 
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -39,6 +36,19 @@
   --callout-border-rgb: 172, 175, 176;
   --card-rgb: 180, 185, 188;
   --card-border-rgb: 131, 134, 135;
+
+/* ////////////////////////////////////////////////////////////////////////////////////// */
+/* this is the only place I can get the .pac-container to play nice and listen to my css */
+  .pac-container {
+    outline: solid darkred 2px;
+    width: 60% !important;
+    left: 0 !important;
+    right: 0 !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    top: 60% !important
+  }
+/* ///////////////////////////////////////////////////////////////////////////// */
 }
 
 @media (prefers-color-scheme: dark) {
