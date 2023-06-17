@@ -1,0 +1,55 @@
+.clubListContainer {
+  width: 30%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  outline: #2b2b2b solid;
+  margin-right: 2px;
+}
+
+.header {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: darkred;
+  text-align: center;
+}
+
+.clubList {
+  flex: 1;
+  overflow-y: auto;
+  scrollbar-width: thin;
+}
+
+.clubCard {
+  background-color: #e7e5e5;
+  border-radius: 10px;
+  padding: 10px;
+  box-sizing: border-box;
+  display: flex;
+  margin-bottom: 10px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.clubName {
+  font-size: 20px;
+  font-weight: bold;
+  color: darkred;
+}
+
+.clubDescription {
+  font-size: 16px;
+}
+
+.clubList {
+  background-color: #fff;
+  min-width: 100px;
+}
+
+.clubInfo {
+  color: #333333;
+}

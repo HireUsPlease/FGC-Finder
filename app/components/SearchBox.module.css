@@ -1,8 +1,14 @@
-.form {
+.searchContainer {
+  display: flex;
   width: 60%;
   min-width: 329px;
+  align-items: center;
   /* this can be moved up and down pretty easily, im not satisfied with where its at */
   /* margin-bottom: 60px; */
+}
+
+.form {
+  width: 100%;
 }
 
 .searchBox {
@@ -11,10 +17,14 @@
   width: 100%;
   height: 50px;
   background-color: #f1f1f1;
-  border-radius: 25px;
-  padding: 0 15px;
+  border-radius: 25px 0 0 25px;
   outline: #2b2b2b solid;
-  min-width: 329px;
+  min-width: 100px;
+}
+
+.searchBox:focus-within {
+  transition: outline-color 0.3s ease;
+  outline: darkred solid;
 }
 
 .searchIcon {
@@ -25,7 +35,6 @@
   border-radius: 0 25px 25px 0;
   width: 80px;
   height: 52px;
-  margin-right: -16px;
   outline: #2b2b2b solid;
   outline-offset: -1px;
 }
@@ -39,9 +48,10 @@
 .locationIcon {
   display: flex;
   align-items: center;
+  justify-content: center;
   width: 40px;
   height: 40px;
-  margin-left: 5px;
+  margin-left: 10px;
 }
 
 .locationIcon i {
@@ -63,20 +73,25 @@
   color: #999999;
 }
 
-.searchBox button {
+.searchContainer button {
   background-color: transparent;
   border: none;
   outline: none;
   cursor: pointer;
 }
 
-.searchBox button i {
+.searchContainer button i {
   font-size: 20px;
   color: #ffffff;
   transition: color 0.3s ease;
   margin-right: 8px;
 }
 
-.searchBox button:hover i {
+.searchContainer button:hover i {
   color: #666666;
+}
+
+.searchContainer button:focus > .searchIcon {
+  transition: outline-color 0.3s ease;
+  outline: darkred solid;
 }

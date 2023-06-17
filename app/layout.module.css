@@ -1,0 +1,5 @@
+/* this can probably be moved to the global css to have a more concise file structure */
+.image {
+  z-index: -1;
+  filter: brightness(40%) sepia(1);
+}

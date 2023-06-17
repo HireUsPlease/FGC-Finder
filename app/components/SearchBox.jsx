@@ -1,16 +1,13 @@
 "use client";
-// using this pkg made this significantly less convoluted
+
 import { usePlacesWidget } from "react-google-autocomplete";
 import styles from "./SearchBox.module.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
 const SearchBox = () => {
   const { ref } = usePlacesWidget({
-    // Google API key goes here, I cannot get it to read from the enviorment variable right now
-    // and it is a bad idea to just push your apikeys up, so it has to be put in manually for now
-    apiKey: "Google Maps Api Key Goes here",
+    apiKey: process.env.NEXT_PUBLIC_MAPS_KEY,
     onPlaceSelected: (place) => {
-      console.log(place);
       if (place.geometry && place.geometry.location) {
         const { lat, lng } = place.geometry.location;
         // this is the geocode from the searched location, right now it just console logs
@@ -37,23 +34,25 @@ const SearchBox = () => {
   }
 
   return (
-    <form className={styles.form} onSubmit={handleSubmit}>
-      <div className={styles.searchBox}>
-        <div className={styles.locationIcon}>
-          <i className="fas fa-map-marker-alt"></i>
-        </div>
-        <input
-          ref={ref}
-          placeholder="City, Address, Postal Code, or Region"
-          id="location"
-        />
-        <button type="button" onClick={handleSubmit}>
-          <div className={styles.searchIcon}>
-            <i className="fas fa-search"></i>
+    <div className={styles.searchContainer}>
+      <form className={styles.form} onSubmit={handleSubmit}>
+        <div className={styles.searchBox}>
+          <div className={styles.locationIcon}>
+            <i className="fas fa-map-marker-alt"></i>
           </div>
-        </button>
-      </div>
-    </form>
+          <input
+            ref={ref}
+            placeholder="City, Address, Postal Code, or Region"
+            id="location"
+          />
+        </div>
+      </form>
+      <button type="button" aria-label="Search Button" onClick={handleSubmit}>
+        <span className={styles.searchIcon}>
+          <i className="fas fa-search"></i>
+        </span>
+      </button>
+    </div>
   );
 };
 
