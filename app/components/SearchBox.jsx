@@ -1,23 +1,30 @@
 "use client";
 
 import { usePlacesWidget } from "react-google-autocomplete";
+import { useMap } from "../lib/state";
 import styles from "./SearchBox.module.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
 const SearchBox = () => {
+
+  const mapState = useMap();
+
+  if (mapState.isLoaded) {
+    return <SearchBoxImpl mapUrl={mapState.url} />
+  }
+}
+
+const SearchBoxImpl = ({ mapUrl }) => {
+
   const { ref } = usePlacesWidget({
-    apiKey: process.env.NEXT_PUBLIC_MAPS_KEY,
+    googleMapsScriptBaseUrl: mapUrl,
     onPlaceSelected: (place) => {
       if (place.geometry && place.geometry.location) {
         const { lat, lng } = place.geometry.location;
         // this is the geocode from the searched location, right now it just console logs
         console.log(`${lat()}, ${lng()}`);
       }
-    },
-    options: {
-      types: ["(regions)"],
-      componentRestrictions: { country: "us" },
-    },
+    }
   });
 
   // I somehow need this to just run the google api,
@@ -33,27 +40,27 @@ const SearchBox = () => {
     console.log(inputLocation.value);
   }
 
-  return (
-    <div className={styles.searchContainer}>
-      <form className={styles.form} onSubmit={handleSubmit}>
-        <div className={styles.searchBox}>
-          <div className={styles.locationIcon}>
-            <i className="fas fa-map-marker-alt"></i>
+    return (
+      <div className={styles.searchContainer}>
+        <form className={styles.form} onSubmit={handleSubmit}>
+          <div className={styles.searchBox}>
+            <div className={styles.locationIcon}>
+              <i className="fas fa-map-marker-alt"></i>
+            </div>
+            <input
+              ref={ref}
+              placeholder="City, Address, Postal Code, or Region"
+              id="location"
+            />
           </div>
-          <input
-            ref={ref}
-            placeholder="City, Address, Postal Code, or Region"
-            id="location"
-          />
-        </div>
-      </form>
-      <button type="button" aria-label="Search Button" onClick={handleSubmit}>
-        <span className={styles.searchIcon}>
-          <i className="fas fa-search"></i>
-        </span>
-      </button>
-    </div>
-  );
+        </form>
+        <button type="button" aria-label="Search Button" onClick={handleSubmit}>
+          <span className={styles.searchIcon}>
+            <i className="fas fa-search"></i>
+          </span>
+        </button>
+      </div>
+    );
 };
 
 export default SearchBox;

@@ -1,7 +1,8 @@
 "use client";
 
 import React, { useState, useCallback } from "react";
-import { GoogleMap, useJsApiLoader, Marker } from "@react-google-maps/api";
+import { GoogleMap, Marker } from "@react-google-maps/api";
+import { useMap } from "../lib/state";
 import styles from "./Map.module.css";
 
 // this will be set based on the selected location from the google autofill
@@ -18,10 +19,8 @@ const geocodes = [
 
 // loads the map
 function Map() {
-  const { isLoaded } = useJsApiLoader({
-    id: "google-map-script",
-    googleMapsApiKey: process.env.NEXT_PUBLIC_MAPS_KEY,
-  });
+
+  const mapState = useMap();
 
   const [map, setMap] = useState(null);
 
@@ -37,7 +36,7 @@ function Map() {
     setMap(null);
   }, []);
   // if the map is loaded, render it, otherwise load empty fractals
-  return isLoaded ? (
+  return mapState.isLoaded ? (
     <GoogleMap
       // mapContainerStyle={containerStyle}
       mapContainerClassName={styles.container}

@@ -81,6 +81,7 @@ const ClubList = () => {
               <Image
                 src={club.logo}
                 style={{ objectFit: "contain" }}
+                alt="club logo image"
                 width={60}
                 height={60}
               />
