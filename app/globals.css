@@ -37,9 +37,11 @@
   --card-rgb: 180, 185, 188;
   --card-border-rgb: 131, 134, 135;
 
+}
+
 /* ////////////////////////////////////////////////////////////////////////////////////// */
 /* this is the only place I can get the .pac-container to play nice and listen to my css */
-  .pac-container {
+  /* .pac-container {
     outline: solid darkred 2px;
     width: 60% !important;
     left: 0 !important;
@@ -47,9 +49,9 @@
     margin-left: auto !important;
     margin-right: auto !important;
     top: 60% !important
-  }
+  } */
 /* ///////////////////////////////////////////////////////////////////////////// */
-}
+
 
 @media (prefers-color-scheme: dark) {
   :root {

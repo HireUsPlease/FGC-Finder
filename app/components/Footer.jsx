@@ -9,21 +9,17 @@ function Footer() {
         <i className="fab fa-github"></i>
         NTumminaro
       </a>
-      <a href="https://github.com/Sealcakes" target="_blank">
-        <i className="fab fa-github"></i>
-        SealCakes
-      </a>
       <a href="https://github.com/aarbrown" target="_blank">
         <i className="fab fa-github"></i>
         aarbrown
       </a>
+      <a href="https://github.com/Sealcakes" target="_blank">
+        <i className="fab fa-github"></i>
+        SealCakes
+      </a>
       <a href="https://github.com/gabess3" target="_blank">
         <i className="fab fa-github"></i>
         gabess3
-      </a>
-      <a href="https://github.com/tjmomon92" target="_blank">
-        <i className="fab fa-github"></i>
-        tjmomon92
       </a>
     </div>
   );

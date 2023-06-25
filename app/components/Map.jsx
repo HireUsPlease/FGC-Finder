@@ -6,27 +6,32 @@ import { useMap } from "../lib/state";
 import styles from "./Map.module.css";
 
 // this will be set based on the selected location from the google autofill
-const center = {
-  lat: 33.1983,
-  lng: -96.6389,
-};
+// const center = {
+//   lat: 33.1983,
+//   lng: -96.6389,
+// };
 
-// these will be set based on $near in comparison to the center
-const geocodes = [
-  { lat: 33.20094384868153, lng: -96.61299335774783 },
-  { lat: 33.038796264128074, lng: -96.732404318679 },
-];
-
-// loads the map
+// loads the map  
 function Map() {
-
+  // gets the searchResults from the context
+  const { searchResults } = useMap();
+  const { mapCenter } = useMap();
   const mapState = useMap();
+  // sets the center to the center from the context
+  const center = mapCenter;
+
+  // maps the searchResults to only be the lat and the lng from each club from the db
+  // this maps an array of points that will be used as pins on the map
+  // i.e: [ { lat: 33.20094384868153, lng: -96.61299335774783 }, { lat: 33.038796264128074, lng: -96.732404318679 }, ]
+  const geocodes = searchResults.map(result => ({
+    lat: result.location.coordinates[1],
+    lng: result.location.coordinates[0]
+  }));
 
   const [map, setMap] = useState(null);
 
-  // we need to set bounds based on the center in a radius, that way the map doesnt zoom all the way in
   const onLoad = useCallback(function callback(map) {
-    // this sets the bounds to be just the center coordinates we pass in, its what I used for testing
+    // this used to set the bounds of the map view as well, it is now instead set with zoom={10}
     // const bounds = new window.google.maps.LatLngBounds(center);
     // map.fitBounds(bounds);
     setMap(map);
@@ -38,7 +43,6 @@ function Map() {
   // if the map is loaded, render it, otherwise load empty fractals
   return mapState.isLoaded ? (
     <GoogleMap
-      // mapContainerStyle={containerStyle}
       mapContainerClassName={styles.container}
       center={center}
       zoom={10}
