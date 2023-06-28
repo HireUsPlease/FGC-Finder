@@ -1,34 +1,24 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# No-Shelf-Control
+![MIT License](https://img.shields.io/badge/License-MIT-brightgreen)
+## Description
+This is the repo for FightingGame.Club website, which allows the user to find a local Fighting game community. Finding a fighting game community in your area can be tough, but with a simple location search, it can be very straight forward!
+## Table of Contents
+* [Usage](#usage)
+* [Contribution](#contribution)
+* [Questions?](#questions)
+## Usage
+Go to the site [here](https://www.fightinggame.club/)
+## Screenshots
+![image](https://github.com/Nick-likes-Rust-and-Next/No-Shelf-Control/assets/16601941/7af9c8ec-e3c1-410e-8dc5-209d72230ddf)
+![image](https://github.com/Nick-likes-Rust-and-Next/No-Shelf-Control/assets/16601941/2f2eee40-07ef-41b9-8830-373c271bf4e2)
 
-## Getting Started
+## Questions
 
-First, run the development server:
+If you have any questions about this project you can find us on [GitHub](https://github.com/HireUsPlease/FGC-Finder).
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+## License
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Licensed under the [MIT License](https://mit-license.org)
+____
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Badges from [Shields.io](https://shields.io)
