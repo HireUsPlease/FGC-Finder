@@ -1,13 +1,21 @@
 import Image from "next/image";
 import styles from "./Header.module.css";
+import Link from "next/link";
 
 function Header() {
   return (
     <div className={styles.header}>
       <div className={styles.logoContainer}>
-        <Image src="/logo_temp.png" alt="logo" width="200" height="60" />
+        <Link href="/">
+          <Image
+            src="/FGC_logo.png"
+            alt="logo"
+            layout="fill"
+            objectFit="contain"
+          />
+        </Link>
       </div>
-      <h1 className={styles.pageTitle}>FIND YOUR LOCALS</h1>
+      <h1 className={styles.pageTitle}>FIND YOUR FGC</h1>
     </div>
   );
 }

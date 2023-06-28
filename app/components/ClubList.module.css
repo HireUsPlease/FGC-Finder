@@ -43,6 +43,12 @@
 
 .clubDescription {
   font-size: 16px;
+  padding-right: 12px;
+  padding-bottom: 14px;
+}
+
+.clubLink {
+  color: darkred;
 }
 
 .clubList {
@@ -52,4 +58,10 @@
 
 .clubInfo {
   color: #333333;
+}
+
+@media (max-width: 767px) {
+  .clubListContainer {
+    width: 100%;
+  }
 }

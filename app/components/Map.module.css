@@ -4,3 +4,9 @@
   border-radius: 10px;
   outline: #2b2b2b solid;
 }
+
+@media (max-width: 767px) {
+  .container {
+    width: 100%;
+  }
+}
