@@ -28,12 +28,12 @@ const ClubList = () => {
                 {/* the list of games should most likely be added here */}
                 <p className={styles.clubDescription}>{club.description}</p>
                 <p>{club.locationName}</p>
-                <p>{club.address}</p>
-                <p>{club.website}</p>
+                <p>{club.address}, {club.city}, {club.state}</p>
+                <a href={club.website} target="blank" className={styles.clubLink}>{club.website}</a>
               </div>
               <div className={styles.clubImage}>
                 {/* this can not load images without using a loader before hand, which can be referenced in the docs for
-                the Image component in Next.js 
+                the Image component in Next.js
                 however, I don't think it will be necessary if we use images that are uploaded
                 I will have to look into this when we have some uploaded images */}
                 <Image

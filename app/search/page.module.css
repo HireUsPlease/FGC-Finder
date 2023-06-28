@@ -8,12 +8,6 @@
   padding-top: 20px;
 }
 
-@media (max-width: 767px) {
-  .main {
-    min-height: 76vh;
-  }
-}
-
 .info {
   display: flex;
   height: 70vh;
@@ -23,4 +17,17 @@
 .mapContainer {
   width: 70%;
   height: 100%;
+}
+
+@media (max-width: 767px) {
+  .main {
+    min-height: 76vh;
+    }
+  .info {
+    flex-direction: column;
+    width: 100vw;
+  }
+  .mapContainer {
+    width: 100%;
+  }
 }
