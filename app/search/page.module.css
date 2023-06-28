@@ -1,0 +1,26 @@
+/* main page css */
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 84vh;
+  padding-top: 20px;
+}
+
+@media (max-width: 767px) {
+  .main {
+    min-height: 76vh;
+  }
+}
+
+.info {
+  display: flex;
+  height: 70vh;
+  width: 100%;
+}
+
+.mapContainer {
+  width: 70%;
+  height: 100%;
+}
