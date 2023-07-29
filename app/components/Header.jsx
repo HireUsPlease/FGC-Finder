@@ -1,26 +1,23 @@
-"use client"
+"use client";
 
 import Image from "next/image";
 import styles from "./Header.module.css";
 import Link from "next/link";
-import { useState } from "react";
-import { FGCForm } from "./FGCForm";
+import { useForm } from "../lib/state";
 
 function Header() {
-  const [formIsOpen, setFormIsOpen] = useState(false);
+  // context
+  const { formIsOpen, updateFormState } = useForm();
 
+  // update context on click
   const openForm = () => {
-    setFormIsOpen(true);
-  };
-
-  const closeForm = () => {
-    setFormIsOpen(false);
+    updateFormState(formIsOpen);
   };
 
   return (
     <div className={styles.header}>
       <div className={styles.logoContainer}>
-        {/* <Link href="/"> */}
+        <Link href="/">
           <Image
             fill
             src="/FGC_logo.png"
@@ -28,11 +25,13 @@ function Header() {
             objectFit="contain"
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
-        {/* </Link> */}
+        </Link>
       </div>
       <h1 className={styles.pageTitle}>FIND YOUR FGC</h1>
-      <button onClick={openForm}>Yeet</button>
-      <FGCForm isOpen={formIsOpen} onClose={closeForm} />
+      {/* this will be styled to match the aestetic of the page */}
+      <button onClick={openForm} className={styles.button}>
+        Add Your FGC
+      </button>
     </div>
   );
 }

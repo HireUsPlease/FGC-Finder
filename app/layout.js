@@ -1,8 +1,8 @@
 import Image from "next/image";
-import { Analytics } from '@vercel/analytics/react';
+import { Analytics } from "@vercel/analytics/react";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
-import MapProvider from "./lib/state";
+import MapProvider, { FormProviderComponent } from "./lib/state";
 import "./globals.css";
 import styles from "./layout.module.css";
 
@@ -15,14 +15,17 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <Header />
-        <MapProvider>{children}</MapProvider>
+        {/* this is ugly, there is likely a better way to do this */}
+        <FormProviderComponent>
+          <Header />
+          <MapProvider>{children}</MapProvider>
+        </FormProviderComponent>
         {/* moved the background Image to layout so it can be shared on the map page without having to re-render it */}
         <Image
           className={styles.image}
           src="/AT_CD_04.png"
           fill={true}
-          style={{objectFit: "cover"}}
+          style={{ objectFit: "cover" }}
           alt="Picture of the author"
         />
         <Footer />

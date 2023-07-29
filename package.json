@@ -16,7 +16,6 @@
     "@react-google-maps/api": "^2.18.1",
     "@vercel/analytics": "^1.0.1",
     "date-fns": "^2.30.0",
-    "emailjs": "^4.0.2",
     "eslint": "8.41.0",
     "eslint-config-next": "13.4.4",
     "mime": "^3.0.0",

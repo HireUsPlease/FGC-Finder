@@ -22,6 +22,14 @@
   margin: 0;
 }
 
+/* needs styling */
+.button {
+  width: 12%;
+  height: 50%;
+}
+
+/* this is broken, but I have it still in here right now for reference */
+
 /* @media (max-width: 767px) {
   .header {
     flex-direction: column;
