@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { Analytics } from '@vercel/analytics/react';
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import MapProvider from "./lib/state";
@@ -25,6 +26,7 @@ export default function RootLayout({ children }) {
           alt="Picture of the author"
         />
         <Footer />
+        <Analytics />
       </body>
     </html>
   );
