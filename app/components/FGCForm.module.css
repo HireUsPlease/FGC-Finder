@@ -1,0 +1,10 @@
+.modal {
+  /* center this to the whole page or render it with state elsewhere outside of the header */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 80vw;
+  height: 80vh;
+  z-index: 10;
+  background-color: gray;
+}
